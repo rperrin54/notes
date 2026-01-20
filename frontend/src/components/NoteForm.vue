@@ -22,6 +22,7 @@ export default {
 	},
 	methods: {
 		submit() {
+            // Validation  côté frontend
 			if (this.title.length < 3) {
 				this.error = "Minimum 3 caractères";
 				return;

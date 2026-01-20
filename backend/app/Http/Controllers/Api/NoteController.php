@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class NoteController extends Controller
 {
+    /**
+     * GET /api/notes
+     * Retourne la liste des notes triées par date décroissante
+     */
     public function index()
     {
         return response()->json(
@@ -15,6 +19,10 @@ class NoteController extends Controller
         );
     }
 
+    /**
+     * POST /api/notes
+     * Création d'une nouvelle note avec validation
+     */
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -26,6 +34,10 @@ class NoteController extends Controller
         return response()->json($note, 201);
     }
 
+    /**
+     * DELETE /api/notes/{id}
+     * Suppression d'une note existante
+     */
     public function destroy($id)
     {
         $note = Note::findOrFail($id);
