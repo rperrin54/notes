@@ -5,14 +5,23 @@
 			<button  class="danger" @click="$emit('delete', note.id)">x</button>
 		</li>
 	</ul>
-    <span v-else> Il n'y a aucune note</span>
+    <span v-else> Il n'y a aucune notes</span>
 </template>
 
 <script>
 export default {
 	props: {
-        "notes": [Array, Object]
+        "notes": {
+            type: [Array, Object],
+            required: true
+        }
     },
     
 };
 </script>
+
+<style lang="scss" scoped>
+    li {
+        margin-bottom: 5px;
+    }
+</style>
