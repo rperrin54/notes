@@ -1,0 +1,27 @@
+$primary-color: #1ba064;
+$danger-color: rgb(233, 68, 68);
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+button {
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.6;
+    }
+    &.primary {
+        background: $primary-color;
+    }
+
+    &.danger {
+        background: $danger-color;
+    }
+}
